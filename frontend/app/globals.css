@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0E0E0F;
+  --bg-soft: #18181B;
+  --bg-elevated: #212124;
+  --orange: #FF6A1A;
+  --orange-deep: #C9501A;
+  --orange-dim: #3A2415;
+  --fg: #F5F3EF;
+  --fg-secondary: #8A8A8E;
+  --line: #2A2A2D;
+  --success: #4ADE80;
+  --danger: #F85149;
+
+  --background: var(--bg);
+  --foreground: var(--fg);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-jbmono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--orange);
+  color: #0E0E0F;
+}
+
+/* тонкий скроллбар в духе терминала */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fg-secondary);
+}
+
+.font-display {
+  font-family: var(--font-display), Arial, sans-serif;
+}
+.font-mono-num {
+  font-family: var(--font-jbmono), monospace;
+  font-feature-settings: "tnum";
+}
